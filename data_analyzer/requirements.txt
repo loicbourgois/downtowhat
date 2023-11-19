@@ -1,0 +1,7 @@
+sparqlwrapper
+xmltodict
+requests
+qwikidata
+openai
+pandas
+pandasql

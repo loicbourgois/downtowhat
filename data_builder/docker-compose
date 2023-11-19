@@ -1,0 +1,11 @@
+services:
+  data_builder:
+    build:
+      context: $HOME/github.com/loicbourgois/downtowhat/data_builder
+      dockerfile: Dockerfile
+    command: /root/github.com/loicbourgois/downtowhat/data_builder/go_inner.sh
+    env_file:
+      - $HOME/github.com/loicbourgois/downtowhat_secrets/secrets.env
+    volumes:
+      # - $HOME/github.com/loicbourgois/downtowhat_local/data:/root/github.com/loicbourgois/downtowhat_local/data:rw
+      - $HOME/github.com/loicbourgois/downtowhat:/root/github.com/loicbourgois/downtowhat:rw
