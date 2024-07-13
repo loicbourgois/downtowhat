@@ -1,0 +1,13 @@
+pandas
+requests
+google-cloud-bigquery
+sqlalchemy
+psycopg2
+google-cloud-storage
+google-cloud-secret-manager
+db-dtypes
+gspread
+pyyaml
+black
+pylint
+bs4
