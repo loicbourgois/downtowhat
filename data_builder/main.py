@@ -1,6 +1,5 @@
 from .log import logging
 
-logging.info("start")
 from .oai import Openai
 import os
 import pandas
@@ -9,21 +8,15 @@ from .parallel_v2 import (
     parallel_v2,
     async_wrap,
 )
+from .files import read
+
+logging.info("start")
 
 oai = Openai(
     api_key=os.environ["OPENAI_API_KEY"],
     organization=os.environ["OPENAI_ORGANIZATION"],
 )
-from .files import read
 
-# r2 = oai.query_openai_chat_conversation(
-#     [
-#         {"role": "user", "content": "Hey"},
-#         {"role": "assistant", "content": r1['response']},
-#         {"role": "assistant", "content": "How are you ?"},
-#     ],
-# )
-# logging.info(r2)
 df = pandas.read_csv(
     f"{os.environ['HOME']}/github.com/loicbourgois/downtowhat/data_builder/questions.csv",
     delimiter=";",

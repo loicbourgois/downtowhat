@@ -13,7 +13,9 @@ PGPASSWORD=$dtw_DATABASE_PASSWORD psql -v ON_ERROR_STOP=1 \
 	--username $dtw_DATABASE_USER \
 	--dbname $dtw_DATABASE_DBNAME \
 	-c "\timing" \
-	-f /migrations/001/02_query.sql
+	-f /migrations/001/02_query.sql \
+	-c "\copy option FROM '/generated/options.tsv' DELIMITER E'\t' QUOTE E'\b' CSV HEADER;" \
+	-c "\copy cosine_similarity FROM '/generated/cosine_similarity.tsv' DELIMITER E'\t' QUOTE E'\b' CSV HEADER;"
 	# \
 	#-f /test_1.sql \
 	#2>&1 | tee /var/lib/postgresql/logs.txt

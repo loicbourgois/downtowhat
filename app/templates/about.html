@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Downtowhat - About</title>
+        <script type="module" src="/about/index.js"></script>
+        <link rel="stylesheet" href="/index.css">
+    </head>
+    <body>
+        {% include 'nav.html' %}
+        <p>environment: {{ environment }}</p>
+        <div id="localstorage">
+
+        </div>
+        <button onclick="reset_localstorage()">Reset localstorage</button>
+    </body>
+</html>

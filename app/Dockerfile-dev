@@ -1,0 +1,5 @@
+FROM python
+COPY ./requirements.txt /root/github.com/loicbourgois/downtowhat/app/requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip python -m pip install -r /root/github.com/loicbourgois/downtowhat/app/requirements.txt
+COPY . /root/github.com/loicbourgois/downtowhat/app
+CMD ["/root/github.com/loicbourgois/downtowhat/app/main-dev.sh"]
