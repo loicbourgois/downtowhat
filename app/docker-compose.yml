@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: $HOME/github.com/loicbourgois/downtowhat/app
+      dockerfile: $HOME/github.com/loicbourgois/downtowhat/app/Dockerfile-dev
+    ports:
+      - "80:8080"
+    environment:
+      - environment=local
+    volumes:
+      - $HOME/github.com/loicbourgois/downtowhat/app:/root/github.com/loicbourgois/downtowhat/app:ro

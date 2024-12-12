@@ -1,14 +1,18 @@
-with q0 as (               
-    select * from anonymous_dtw_user
-),
-q1 as (
-    select * from option
-),
-q2 as (
-    select * 
-    from q0
-    cross join q1
-),
+with 
+-- q0 as (               
+--     select * from anonymous_dtw_user
+--     where 
+--         public_user_id = :public_user_id
+--         or user_id = :user_id
+-- ),
+-- q1 as (
+--     select * from option
+-- ),
+-- q2 as (
+--     select * 
+--     from q0
+--     cross join q1
+-- ),
 q3 as (
     select 
         *,
@@ -101,15 +105,15 @@ q12 as (
     select 
         *
     from q11
+    where ua = :user_id
     order by score desc
 )
 select 
-    q12.*,
-    a.username as a,
-    b.username as b
+    public_user_id,
+    username,
+    score
 from q12
-inner join anonymous_dtw_user as a
-on q12.ua = a.user_id
-inner join anonymous_dtw_user as b
-on q12.ub = b.user_id
+inner join anonymous_dtw_user
+on q12.ub = anonymous_dtw_user.user_id
+where public_user_id = :public_user_id
 order by score desc

@@ -104,12 +104,8 @@ q12 as (
     order by score desc
 )
 select 
-    q12.*,
-    a.username as a,
-    b.username as b
+    *,
 from q12
-inner join anonymous_dtw_user as a
-on q12.ua = a.user_id
-inner join anonymous_dtw_user as b
-on q12.ub = b.user_id
+inner join anonymous_dtw_user
+on q12.ub = anonymous_dtw_user.user_id
 order by score desc

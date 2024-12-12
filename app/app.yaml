@@ -1,0 +1,15 @@
+runtime: custom
+env: flex
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.6
+  disk_size_gb: 10
+env_variables:
+  environment: "production"
+liveness_check:
+  path: "/liveness_check"
+readiness_check:
+  path: "/readiness_check"

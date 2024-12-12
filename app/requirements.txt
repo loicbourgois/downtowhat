@@ -1,0 +1,6 @@
+flask
+gunicorn
+bleach
+sqlalchemy
+pandas
+psycopg2

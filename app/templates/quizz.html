@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Downtowhat</title>
+        <link rel="stylesheet" href="/index.css">
+        <script type="module" src="/quizz/index.js"></script>
+    </head>
+    <body>
+        {% include 'nav.html' %}
+        <div id="options"></div>
+        <div id="content">
+            <div class="user_ranking" id="left">
+                <p class="title"><span id="username"></span ><span class="spacer"></span><span id="score"></span></p>
+                <div id="ranking"></div>
+            </div>
+            <div class="user_ranking">
+                <p class="title"><span id="username_2"></span></p>
+                <div id="ranking_2"></div>
+            </div>
+            <div class="user_ranking">
+                <p class="title">Matches</input>
+                <div id="matches"></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+services:
+  generator:
+    build:
+      context: $HOME/github.com/loicbourgois/downtowhat/generator
+      dockerfile: $HOME/github.com/loicbourgois/downtowhat/generator/Dockerfile
+    volumes:
+      - $HOME/github.com/loicbourgois/downtowhat:/root/github.com/loicbourgois/downtowhat:ro
+      - $HOME/github.com/loicbourgois/downtowhat/generated:/root/github.com/loicbourgois/downtowhat/generated:rw
+    env_file:
+      - $HOME/github.com/loicbourgois/downtowhat_secrets/secrets.env
+  
